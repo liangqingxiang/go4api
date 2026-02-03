@@ -1,4 +1,4 @@
-module github.com/Aysnine/go4api
+module github.com/liangqingxiang/go4api
 
 go 1.19
 
