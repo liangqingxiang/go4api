@@ -18,8 +18,8 @@ import (
 	// "encoding/csv"
 	"encoding/json"
 
-	"github.com/Aysnine/go4api/api"
-	"github.com/Aysnine/go4api/lib/testcase"
+	"github.com/liangqingxiang/go4api/api"
+	"github.com/liangqingxiang/go4api/lib/testcase"
 	// gjson "github.com/tidwall/gjson"
 	// sjson "github.com/tidwall/sjson"
 )

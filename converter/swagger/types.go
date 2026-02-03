@@ -10,52 +10,49 @@
 
 package swagger
 
-import ( 
-)
+import ()
 
 // swagger type
 type Swagger2 struct {
-	Swagger string
-	Info map[string]interface{}
-	BasePath string
-	Tags map[string]interface{}
-	Schemes []string
-	Paths map[string]Path
+	Swagger             string
+	Info                map[string]interface{}
+	BasePath            string
+	Tags                map[string]interface{}
+	Schemes             []string
+	Paths               map[string]Path
 	SecurityDefinitions map[string]interface{}
-	Definitions map[string]interface{}
-	ExternalDocs map[string]interface{}
+	Definitions         map[string]interface{}
+	ExternalDocs        map[string]interface{}
 }
 
 type Path map[string]PathDetails
 
 type PathDetails struct {
-	Method string
-	Consumes []string // content-type?
-	Produces []string // content-type?
+	Method     string
+	Consumes   []string // content-type?
+	Produces   []string // content-type?
 	Parameters []Parameter
-	Responses []string
-	Security []map[string]interface{}
+	Responses  []string
+	Security   []map[string]interface{}
 }
 
 type Parameter struct {
-	Name string
-	In string 
-	Description string
-	Required bool
-	Type string
-	Format string
-	Items map[string]interface{}
+	Name             string
+	In               string
+	Description      string
+	Required         bool
+	Type             string
+	Format           string
+	Items            map[string]interface{}
 	CollectionFormat string
-	Schema map[string]interface{}  // {"$ref": "#/definitions/Order"}
+	Schema           map[string]interface{} // {"$ref": "#/definitions/Order"}
 }
 
 type Definitions map[string]interface{}
 
 type Definition struct {
-	Type string
-	Required []string 
+	Type       string
+	Required   []string
 	Properties map[string]interface{}
-	Xml map[string]interface{}
+	Xml        map[string]interface{}
 }
-
-

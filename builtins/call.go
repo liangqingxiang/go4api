@@ -11,48 +11,48 @@
 package builtins
 
 import (
-    // "fmt"
-	// "math/rand"                                                                                                                                        
+	// "fmt"
+	// "math/rand"
 	// "time"
- 	// "strings"
- 	"reflect"
+	// "strings"
+	"reflect"
 )
 
-func BuiltinFunctionsMapping (key string) interface{} {
-    //
-    FuncsMapping := map[string]interface{} {
-    	"NextInt": NextInt,
-        "NextAlphaNumeric": NextAlphaNumeric,
-        "NextStringNumeric": NextStringNumeric,
-        "Substitute": Substitute,
-        "Select": Select,
-        "Join": Join,
-        "Split": Split,
-        "Replace": Replace,
-        "SubString": SubString,
-        "ToString": ToString,
-        "Length": Length,
-        "ToInt": ToInt,
-        "ToBool": ToBool,
-        "CurrentTimeStampString": CurrentTimeStampString,
-        "CurrentTimeStampUnix": CurrentTimeStampUnix,
-        "DayStart": DayStart,
-        "DayEnd": DayEnd,
-        "ConvertTimeToUnix": ConvertTimeToUnix,
-        "ConvertTimeToStr": ConvertTimeToStr,
-        "TimeStampUnixOffset": TimeStampUnixOffset,
-    }
+func BuiltinFunctionsMapping(key string) interface{} {
+	//
+	FuncsMapping := map[string]interface{}{
+		"NextInt":                NextInt,
+		"NextAlphaNumeric":       NextAlphaNumeric,
+		"NextStringNumeric":      NextStringNumeric,
+		"Substitute":             Substitute,
+		"Select":                 Select,
+		"Join":                   Join,
+		"Split":                  Split,
+		"Replace":                Replace,
+		"SubString":              SubString,
+		"ToString":               ToString,
+		"Length":                 Length,
+		"ToInt":                  ToInt,
+		"ToBool":                 ToBool,
+		"CurrentTimeStampString": CurrentTimeStampString,
+		"CurrentTimeStampUnix":   CurrentTimeStampUnix,
+		"DayStart":               DayStart,
+		"DayEnd":                 DayEnd,
+		"ConvertTimeToUnix":      ConvertTimeToUnix,
+		"ConvertTimeToStr":       ConvertTimeToStr,
+		"TimeStampUnixOffset":    TimeStampUnixOffset,
+	}
 
-    return FuncsMapping[key]
+	return FuncsMapping[key]
 }
 
-func CallBuiltinFunc (funcName string, funcParams interface{}) interface{} {
-    f := reflect.ValueOf(BuiltinFunctionsMapping(funcName))
+func CallBuiltinFunc(funcName string, funcParams interface{}) interface{} {
+	f := reflect.ValueOf(BuiltinFunctionsMapping(funcName))
 
-    var in []reflect.Value
-    in = append(in, reflect.ValueOf(funcParams))
+	var in []reflect.Value
+	in = append(in, reflect.ValueOf(funcParams))
 
-    result := f.Call(in)
+	result := f.Call(in)
 
-    return result[0].Interface()
+	return result[0].Interface()
 }

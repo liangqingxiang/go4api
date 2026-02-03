@@ -17,8 +17,8 @@ import (
 	"regexp"
 	"strings"
 
-	gcsv "github.com/Aysnine/go4api/lib/csv"
-	"github.com/Aysnine/go4api/utils"
+	gcsv "github.com/liangqingxiang/go4api/lib/csv"
+	"github.com/liangqingxiang/go4api/utils"
 )
 
 func GetBasicInputsFilesPerFile(filePath string) []string {

@@ -11,30 +11,29 @@
 package statechart
 
 import (
-    // "fmt"
-    "os"
-    // "sync"
-    // "strings"
-    // "bufio"
-    // "io"
-    // "path/filepath"
+	// "fmt"
+	"os"
+	// "sync"
+	// "strings"
+	// "bufio"
+	// "io"
+	// "path/filepath"
 )
 
+func GenerateKeywordFile(strVar string, filePath string) {
+	outFile, err := os.OpenFile(filePath, os.O_CREATE|os.O_WRONLY|os.O_TRUNC, 0644)
+	if err != nil {
+		panic(err)
+	}
+	defer outFile.Close()
 
-func GenerateKeywordFile (strVar string, filePath string) {
-    outFile, err := os.OpenFile(filePath, os.O_CREATE|os.O_WRONLY|os.O_TRUNC, 0644)
-    if err != nil {
-       panic(err) 
-    }
-    defer outFile.Close()
-
-    outFile.WriteString(strVar)
+	outFile.WriteString(strVar)
 }
 
-func KWSettingsStr () {
+func KWSettingsStr() {
 
 }
 
-func KWTestCasesStr () {
-    
+func KWTestCasesStr() {
+
 }

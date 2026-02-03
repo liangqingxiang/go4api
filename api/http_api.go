@@ -16,8 +16,8 @@ import (
 
 	// "encoding/json"
 
-	"github.com/Aysnine/go4api/lib/testcase"
-	g4http "github.com/Aysnine/go4api/protocal/http"
+	"github.com/liangqingxiang/go4api/lib/testcase"
+	g4http "github.com/liangqingxiang/go4api/protocal/http"
 )
 
 func (tcDataStore *TcDataStore) RunHttp(baseUrl string) (string, []*testcase.TestMessage) {

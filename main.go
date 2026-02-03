@@ -15,11 +15,11 @@ import (
 	"os"
 	"time"
 
-	"github.com/Aysnine/go4api/cmd"
-	"github.com/Aysnine/go4api/converter/har"
-	"github.com/Aysnine/go4api/converter/swagger"
-	"github.com/Aysnine/go4api/executor"
-	"github.com/Aysnine/go4api/reports"
+	"github.com/liangqingxiang/go4api/cmd"
+	"github.com/liangqingxiang/go4api/converter/har"
+	"github.com/liangqingxiang/go4api/converter/swagger"
+	"github.com/liangqingxiang/go4api/executor"
+	"github.com/liangqingxiang/go4api/reports"
 )
 
 func main() {

@@ -11,19 +11,19 @@
 package statechart
 
 import (
-    "fmt"
-    "sync"
-    // "time"
-    // "os"
-    // "sort"
-    // "strings"
+	"fmt"
+	"sync"
+	// "time"
+	// "os"
+	// "sort"
+	// "strings"
 )
 
 // Note: Moore -> Mealy 100%, but Mealy -> Moore possible 100%
 // Here take care Mealy only
 
 // set
-func (st *State) SetStateIds () {
+func (st *State) SetStateIds() {
 	for k, _ := range st.States {
 		st.States[k].Id = k
 
@@ -32,7 +32,7 @@ func (st *State) SetStateIds () {
 }
 
 // get
-func (st *State) GetStateIds () {
+func (st *State) GetStateIds() {
 	fmt.Println("--> id: ", st.Id)
 	for k, v := range st.States {
 		fmt.Println("-->: ", k, v)
@@ -41,19 +41,19 @@ func (st *State) GetStateIds () {
 	}
 }
 
-func (st *State) GetStateTransitions (ch chan *Transition, wg *sync.WaitGroup) {	
+func (st *State) GetStateTransitions(ch chan *Transition, wg *sync.WaitGroup) {
 	defer wg.Done()
 
 	for event, v1 := range st.On {
 		for target, v2 := range v1 {
-			transition := &Transition {
-				FromState:  st.Id,
-				Event:      event,
-				ToState:    target,
-				Cond:       v2.Cond,
-				Actions:    v2.Actions,
+			transition := &Transition{
+				FromState: st.Id,
+				Event:     event,
+				ToState:   target,
+				Cond:      v2.Cond,
+				Actions:   v2.Actions,
 			}
-			
+
 			ch <- transition
 		}
 	}
@@ -66,12 +66,11 @@ func (st *State) GetStateTransitions (ch chan *Transition, wg *sync.WaitGroup) {
 }
 
 // get state - event (json node: On)
-func (st *State) GetStateEvents () {
+func (st *State) GetStateEvents() {
 
 }
 
 // get Transition event - target names
-func (st *State) GetTransitionInfos () {
+func (st *State) GetTransitionInfos() {
 
 }
-

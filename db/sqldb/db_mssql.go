@@ -15,8 +15,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/Aysnine/go4api/cmd"
-	"github.com/Aysnine/go4api/utils"
+	"github.com/liangqingxiang/go4api/cmd"
+	"github.com/liangqingxiang/go4api/utils"
 
 	_ "github.com/denisenkom/go-mssqldb"
 )

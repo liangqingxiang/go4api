@@ -13,9 +13,9 @@ package api
 import (
 	"fmt"
 
-	"github.com/Aysnine/go4api/lib/testcase"
+	"github.com/liangqingxiang/go4api/lib/testcase"
 
-	"github.com/Aysnine/go4api/assertion"
+	"github.com/liangqingxiang/go4api/assertion"
 )
 
 func compareCommon(reponsePart string, key string, assertionKey string, actualValue interface{}, expValue interface{}) (bool, *testcase.TestMessage) {

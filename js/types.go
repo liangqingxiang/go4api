@@ -15,7 +15,7 @@ import (
 	// "os"
 	// "strings"
 
-	// "github.com/Aysnine/go4api/cmd"
+	// "github.com/liangqingxiang/go4api/cmd"
 
 	goja "github.com/dop251/goja"
 )

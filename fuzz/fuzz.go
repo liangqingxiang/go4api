@@ -18,9 +18,9 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/Aysnine/go4api/cmd"
-	"github.com/Aysnine/go4api/lib/pairwise"
-	"github.com/Aysnine/go4api/utils"
+	"github.com/liangqingxiang/go4api/cmd"
+	"github.com/liangqingxiang/go4api/lib/pairwise"
+	"github.com/liangqingxiang/go4api/utils"
 )
 
 // valid, invalid data may have more than one field, but the map itself can not ensure the key sequence

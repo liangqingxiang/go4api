@@ -15,7 +15,7 @@ import (
 	// "strconv"
 	// "encoding/json"
 
-	"github.com/Aysnine/go4api/lib/testcase"
+	"github.com/liangqingxiang/go4api/lib/testcase"
 
 	. "github.com/ahmetb/go-linq"
 )

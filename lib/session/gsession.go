@@ -11,51 +11,50 @@
 package gsession
 
 import (
-    "sync"
+	"sync"
 )
 
 var GlobalVariables sync.Map
-var Session         sync.Map
+var Session sync.Map
 
-func LookupTcSession (tcName string) map[string]interface{} {
-    tcSession := make(map[string]interface{})
+func LookupTcSession(tcName string) map[string]interface{} {
+	tcSession := make(map[string]interface{})
 
-    result, ok := Session.Load(tcName)
-    if ok {
-        tcSession = result.(map[string]interface{})
-    }
+	result, ok := Session.Load(tcName)
+	if ok {
+		tcSession = result.(map[string]interface{})
+	}
 
-    return tcSession
+	return tcSession
 }
 
-func WriteTcSession (tcName string, tcSession map[string]interface{}) {
-    Session.Store(tcName, tcSession)
+func WriteTcSession(tcName string, tcSession map[string]interface{}) {
+	Session.Store(tcName, tcSession)
 }
 
 // global
-func LoopGlobalVariables () map[string]interface{} {
-    var resMap = make(map[string]interface{})
+func LoopGlobalVariables() map[string]interface{} {
+	var resMap = make(map[string]interface{})
 
-    GlobalVariables.Range(func(key, value interface{}) bool {
-        resMap[key.(string)] = value
-        return true
-    })
+	GlobalVariables.Range(func(key, value interface{}) bool {
+		resMap[key.(string)] = value
+		return true
+	})
 
-    return resMap
+	return resMap
 }
 
-func LookupGlobalVariables (key string) interface{} {
-    var value interface{}
+func LookupGlobalVariables(key string) interface{} {
+	var value interface{}
 
-    result, ok := GlobalVariables.Load(key)
-    if ok {
-        value = result
-    }
+	result, ok := GlobalVariables.Load(key)
+	if ok {
+		value = result
+	}
 
-    return value
+	return value
 }
 
-func WriteGlobalVariables (key string, value interface{}) {
-    GlobalVariables.Store(key, value)
+func WriteGlobalVariables(key string, value interface{}) {
+	GlobalVariables.Store(key, value)
 }
-

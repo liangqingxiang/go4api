@@ -15,8 +15,8 @@ import (
 	"sync"
 	"time"
 
-	// "github.com/Aysnine/go4api/cmd"
-	"github.com/Aysnine/go4api/lib/testcase"
+	// "github.com/liangqingxiang/go4api/cmd"
+	"github.com/liangqingxiang/go4api/lib/testcase"
 )
 
 func DispatchApi(wg *sync.WaitGroup, resultsExeChan chan testcase.TestCaseExecutionInfo, baseUrl string, tcData *testcase.TestCaseDataInfo) {

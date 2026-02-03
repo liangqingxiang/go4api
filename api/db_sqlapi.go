@@ -13,8 +13,8 @@ package api
 import (
 	// "fmt"
 
-	gsql "github.com/Aysnine/go4api/db/sqldb"
-	// gpg  "github.com/Aysnine/go4api/db/postgres"
+	gsql "github.com/liangqingxiang/go4api/db/sqldb"
+	// gpg  "github.com/liangqingxiang/go4api/db/postgres"
 )
 
 // for mysql

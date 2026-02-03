@@ -14,7 +14,7 @@ import (
 	// "fmt"
 	// "reflect"
 
-	gsession "github.com/Aysnine/go4api/lib/session"
+	gsession "github.com/liangqingxiang/go4api/lib/session"
 )
 
 func (tcDataStore *TcDataStore) WriteSession(expTcSession map[string]interface{}) {

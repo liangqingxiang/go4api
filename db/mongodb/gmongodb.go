@@ -18,7 +18,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/Aysnine/go4api/cmd"
+	"github.com/liangqingxiang/go4api/cmd"
 
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"

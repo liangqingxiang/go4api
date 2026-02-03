@@ -11,10 +11,10 @@
 package g4json
 
 import (
-    "fmt"
-    "testing"
-    // "strings"
-    // "encoding/csv"
+	"fmt"
+	"testing"
+	// "strings"
+	// "encoding/csv"
 	"encoding/json"
 )
 
@@ -23,8 +23,8 @@ var tcSampleStr_2 string
 var value interface{}
 var value_2 interface{}
 
-func init () {
-    tcSampleStr = `
+func init() {
+	tcSampleStr = `
         {
           "priority": "1",
           "parentTestCase": "s2ParentTestCase-001",
@@ -86,7 +86,7 @@ func init () {
         }
         `
 
-    tcSampleStr_2 = `
+	tcSampleStr_2 = `
         {
           "priority": "1",
           "parentTestCase": "s2ParentTestCase-002",
@@ -111,108 +111,105 @@ func init () {
           }
         }
         `
-    
-    json.Unmarshal([]byte(tcSampleStr), &value)
-    json.Unmarshal([]byte(tcSampleStr_2), &value_2)
+
+	json.Unmarshal([]byte(tcSampleStr), &value)
+	json.Unmarshal([]byte(tcSampleStr_2), &value_2)
 }
 
-func Test_GetFieldsDetails (t *testing.T) {
-    res := GetFieldsDetails(value)
+func Test_GetFieldsDetails(t *testing.T) {
+	res := GetFieldsDetails(value)
 
-    fmt.Println(len(res))
+	fmt.Println(len(res))
 
-    // resj,_ := json.MarshalIndent(res, "", "\t")
-    // fmt.Println(string(resj))
+	// resj,_ := json.MarshalIndent(res, "", "\t")
+	// fmt.Println(string(resj))
 
-    if len(res) != 45 {
-        t.Fatalf("json parse failed")
-    } else {
-        t.Log("json parse passed")
-    }
+	if len(res) != 45 {
+		t.Fatalf("json parse failed")
+	} else {
+		t.Log("json parse passed")
+	}
 }
 
-func Test_GetJsonNodesLevel (t *testing.T) {
-    res := GetFieldsDetails(value)
+func Test_GetJsonNodesLevel(t *testing.T) {
+	res := GetFieldsDetails(value)
 
-    max := GetJsonNodesLevel(res)
-    
-    if max != 6 {
-        t.Fatalf("json parse failed")
-    } else {
-        t.Log("json parse passed")
-    }
+	max := GetJsonNodesLevel(res)
+
+	if max != 6 {
+		t.Fatalf("json parse failed")
+	} else {
+		t.Log("json parse passed")
+	}
 }
 
-func Test_GetJsonNodesPath (t *testing.T) {
-    res := GetFieldsDetails(value)
+func Test_GetJsonNodesPath(t *testing.T) {
+	res := GetFieldsDetails(value)
 
-    a := GetJsonNodesPath(res)
-    
-    // resj,_ := json.MarshalIndent(a, "", "\t")
-    // fmt.Println(string(resj), len(a))
+	a := GetJsonNodesPath(res)
 
-    if len(a) != 45 {
-        t.Fatalf("json parse failed")
-    } else {
-        t.Log("json parse passed")
-    }
+	// resj,_ := json.MarshalIndent(a, "", "\t")
+	// fmt.Println(string(resj), len(a))
+
+	if len(a) != 45 {
+		t.Fatalf("json parse failed")
+	} else {
+		t.Log("json parse passed")
+	}
 }
 
-func Test_GetJsonLeavesPath (t *testing.T) {
-    res := GetFieldsDetails(value)
+func Test_GetJsonLeavesPath(t *testing.T) {
+	res := GetFieldsDetails(value)
 
-    a := GetJsonLeavesPath(res)
-    
-    // resj,_ := json.MarshalIndent(a, "", "\t")
-    // fmt.Println(string(resj), len(a))
+	a := GetJsonLeavesPath(res)
 
-    if len(a) != 29 {
-        t.Fatalf("json parse failed")
-    } else {
-        t.Log("json parse passed")
-    }
+	// resj,_ := json.MarshalIndent(a, "", "\t")
+	// fmt.Println(string(resj), len(a))
+
+	if len(a) != 29 {
+		t.Fatalf("json parse failed")
+	} else {
+		t.Log("json parse passed")
+	}
 }
 
+func Test_GetJsonNodesLevel_2(t *testing.T) {
+	res := GetFieldsDetails(value_2)
 
-func Test_GetJsonNodesLevel_2 (t *testing.T) {
-    res := GetFieldsDetails(value_2)
+	max := GetJsonNodesLevel(res)
 
-    max := GetJsonNodesLevel(res)
-    
-    if max != 8 {
-        t.Fatalf("json parse failed")
-    } else {
-        t.Log("json parse passed")
-    }
+	if max != 8 {
+		t.Fatalf("json parse failed")
+	} else {
+		t.Log("json parse passed")
+	}
 }
 
+func Test_GetJsonLeavesPath_2(t *testing.T) {
+	res := GetFieldsDetails(value_2)
 
-func Test_GetJsonLeavesPath_2 (t *testing.T) {
-    res := GetFieldsDetails(value_2)
+	a := GetJsonLeavesPath(res)
 
-    a := GetJsonLeavesPath(res)
-    
-    resj,_ := json.MarshalIndent(a, "", "\t")
-    fmt.Println(string(resj), len(a))
+	resj, _ := json.MarshalIndent(a, "", "\t")
+	fmt.Println(string(resj), len(a))
 	// ...
 	// "request.payload.text.field1.Fn::F1",
 	// "request.payload.text.field2.Fn::F2.0",
 	// "request.payload.text.field2.Fn::F2.1.Fn::F3.1",
 	// "request.payload.text.field2.Fn::F2.1.Fn::F3.0"
 
-    if len(a) != 13 {
-        t.Fatalf("json parse failed")
-    } else {
-        t.Log("json parse passed")
-    }
+	if len(a) != 13 {
+		t.Fatalf("json parse failed")
+	} else {
+		t.Log("json parse passed")
+	}
 }
 
 // usage: go test -test.bench=".*" -count=5
 // 2018-11-01: Benchmark_GetFieldsDetails-8   	   50000	     28625 ns/op
-func Benchmark_GetFieldsDetails (b *testing.B) {
-	// use b.N for looping 
-    for i := 0; i < b.N; i++ { 
-        GetFieldsDetails(value)
-    }
+func Benchmark_GetFieldsDetails(b *testing.B) {
+	// use b.N for looping
+	for i := 0; i < b.N; i++ {
+		GetFieldsDetails(value)
+	}
 }
-

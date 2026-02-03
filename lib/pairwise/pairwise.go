@@ -15,7 +15,7 @@ import (
 	"reflect"
 	"sort"
 
-	combins "github.com/Aysnine/go4api/lib/combination"
+	combins "github.com/liangqingxiang/go4api/lib/combination"
 )
 
 // -------------------------------------------------------------------------

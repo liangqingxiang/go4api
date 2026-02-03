@@ -22,8 +22,8 @@ import (
 	"math/rand"
 	"strings"
 	// "strconv"
-	// "github.com/Aysnine/go4api/utils"
-	// "github.com/Aysnine/go4api/lib/testcase"
+	// "github.com/liangqingxiang/go4api/utils"
+	// "github.com/liangqingxiang/go4api/lib/testcase"
 )
 
 // JSON Schema defines the following basic types:

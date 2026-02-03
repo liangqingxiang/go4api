@@ -16,7 +16,7 @@ import (
 	// "os"
 	// "sort"
 
-	"github.com/Aysnine/go4api/lib/testcase"
+	"github.com/liangqingxiang/go4api/lib/testcase"
 )
 
 // test suite type - get

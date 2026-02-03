@@ -11,26 +11,23 @@
 package utils
 
 import (
-    "fmt"
-    "math"
-    "strconv"
-
+	"fmt"
+	"math"
+	"strconv"
 )
 
 func FloatToString(input_num float64) string {
-    // to convert a float number to a string
-    return strconv.FormatFloat(input_num, 'f', -1, 64)
+	// to convert a float number to a string
+	return strconv.FormatFloat(input_num, 'f', -1, 64)
 }
 
 func CheckFloat64SubType(f float64) {
-    // get current dir, 
-    fmt.Println(int64(f))
-    a, b := math.Modf(f)
+	// get current dir,
+	fmt.Println(int64(f))
+	a, b := math.Modf(f)
 
-    fmt.Println(a, b)
-    fmt.Println(f)
-    fmt.Println(fmt.Sprint(f))
-    fmt.Println(FloatToString(f))
+	fmt.Println(a, b)
+	fmt.Println(f)
+	fmt.Println(fmt.Sprint(f))
+	fmt.Println(FloatToString(f))
 }
-
-

@@ -14,8 +14,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/Aysnine/go4api/cmd"
-	"github.com/Aysnine/go4api/utils"
+	"github.com/liangqingxiang/go4api/cmd"
+	"github.com/liangqingxiang/go4api/utils"
 
 	redigo "github.com/gomodule/redigo/redis"
 )

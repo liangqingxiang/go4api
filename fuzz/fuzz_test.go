@@ -11,36 +11,36 @@
 package fuzz
 
 import (
-    "fmt"
-    "testing"
-    // "encoding/csv"
+	"fmt"
+	"testing"
+	// "encoding/csv"
 )
 
 func Test_getMaxLenVector(t *testing.T) {
-    data := [][]interface{}{{1, 2, 3, 4}, {5, 6, 7}}
+	data := [][]interface{}{{1, 2, 3, 4}, {5, 6, 7}}
 
-    res := getMaxLenVector(data)
+	res := getMaxLenVector(data)
 
-    if res != 4 {
-        t.Fatalf("getMaxLenVector test failed")
-    } else {
-        t.Log("getMaxLenVector test passed")
-    }
+	if res != 4 {
+		t.Fatalf("getMaxLenVector test failed")
+	} else {
+		t.Log("getMaxLenVector test passed")
+	}
 }
 
 func Test_GetCombinationInvalid(t *testing.T) {
-    validVectors := [][]interface{}{{1, 2, 3, 4}, {5, 6, 7}}
-    invalidVectors := [][]interface{}{{"a", "b", "c", "d"}, {"e", "f", "g"}}
+	validVectors := [][]interface{}{{1, 2, 3, 4}, {5, 6, 7}}
+	invalidVectors := [][]interface{}{{"a", "b", "c", "d"}, {"e", "f", "g"}}
 
-    res := GetCombinationInvalid(validVectors, invalidVectors, 2)
+	res := GetCombinationInvalid(validVectors, invalidVectors, 2)
 
-    fmt.Println("validVectors: ", validVectors)
-    fmt.Println("invalidVectors: ", invalidVectors)
-    fmt.Println("res: ", res)
+	fmt.Println("validVectors: ", validVectors)
+	fmt.Println("invalidVectors: ", invalidVectors)
+	fmt.Println("res: ", res)
 
-    if len(res) != 4 * 7 || len(res[0]) != 2 {
-        t.Fatalf("getMaxLenVector test failed")
-    } else {
-        t.Log("getMaxLenVector test passed")
-    }
+	if len(res) != 4*7 || len(res[0]) != 2 {
+		t.Fatalf("getMaxLenVector test failed")
+	} else {
+		t.Log("getMaxLenVector test passed")
+	}
 }

@@ -19,9 +19,9 @@ import (
 
 	// "path/filepath"
 
-	"github.com/Aysnine/go4api/lib/extension/testsuite"
-	"github.com/Aysnine/go4api/lib/testcase"
-	"github.com/Aysnine/go4api/utils"
+	"github.com/liangqingxiang/go4api/lib/extension/testsuite"
+	"github.com/liangqingxiang/go4api/lib/testcase"
+	"github.com/liangqingxiang/go4api/utils"
 )
 
 func InitFullKwTcSlice(kwfilePathSlice []string) ([]*testcase.TestCaseDataInfo, []string) {

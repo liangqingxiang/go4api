@@ -13,7 +13,7 @@ package api
 import (
 	// "fmt"
 
-	gsession "github.com/Aysnine/go4api/lib/session"
+	gsession "github.com/liangqingxiang/go4api/lib/session"
 )
 
 func (tcDataStore *TcDataStore) WriteOutGlobalVariables(expOutGlobalVariables map[string]interface{}) {

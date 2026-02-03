@@ -20,7 +20,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/Aysnine/go4api/utils"
+	"github.com/liangqingxiang/go4api/utils"
 )
 
 func InitFullTcSlice(filePathSlice []string) []*TestCaseDataInfo {

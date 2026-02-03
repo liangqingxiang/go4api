@@ -16,8 +16,8 @@ import (
 	"encoding/json"
 	"reflect"
 
-	"github.com/Aysnine/go4api/lib/rands"
-	"github.com/Aysnine/go4api/lib/testcase"
+	"github.com/liangqingxiang/go4api/lib/rands"
+	"github.com/liangqingxiang/go4api/lib/testcase"
 
 	// gjson "github.com/tidwall/gjson"
 	sjson "github.com/tidwall/sjson"

@@ -16,8 +16,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	// "github.com/Aysnine/go4api/cmd"
-	"github.com/Aysnine/go4api/utils"
+	// "github.com/liangqingxiang/go4api/cmd"
+	"github.com/liangqingxiang/go4api/utils"
 
 	"github.com/dop251/goja"
 	"github.com/dop251/goja_nodejs/require"

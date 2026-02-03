@@ -11,12 +11,12 @@
 package executor
 
 import (
-	"github.com/Aysnine/go4api/cmd"
-	"github.com/Aysnine/go4api/executor/extension"
-	gjs "github.com/Aysnine/go4api/js"
-	"github.com/Aysnine/go4api/lib/testcase"
-	"github.com/Aysnine/go4api/lib/tree"
-	"github.com/Aysnine/go4api/utils"
+	"github.com/liangqingxiang/go4api/cmd"
+	"github.com/liangqingxiang/go4api/executor/extension"
+	gjs "github.com/liangqingxiang/go4api/js"
+	"github.com/liangqingxiang/go4api/lib/testcase"
+	"github.com/liangqingxiang/go4api/lib/tree"
+	"github.com/liangqingxiang/go4api/utils"
 )
 
 type G4Store struct {

@@ -20,7 +20,7 @@ import (
 
 	// "time"
 
-	"github.com/Aysnine/go4api/utils"
+	"github.com/liangqingxiang/go4api/utils"
 )
 
 type ResultsJs struct {

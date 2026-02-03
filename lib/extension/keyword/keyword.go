@@ -11,11 +11,11 @@
 package keyword
 
 import (
-    // "fmt"
-    // "time"
-    // "os"
-    // "sort"
-    "strings"
+	// "fmt"
+	// "time"
+	// "os"
+	// "sort"
+	"strings"
 )
 
 // for keyword to ts / tc execution, there are two options:
@@ -28,63 +28,63 @@ import (
 // (3). reporting
 // i.e. go4api -run -K -kw xx/xx/*.keyword -tc xxxx/ -tsuite xxxxx -jsFuncs xxx -r xxx -tr xxx
 
-func (gKw *GKeyWord) PopulateSettingsOriginalContent (startLine int, endLine int, lines []string) {
+func (gKw *GKeyWord) PopulateSettingsOriginalContent(startLine int, endLine int, lines []string) {
 	var originalContentTemp []string
 
 	if startLine != endLine {
-		for i := startLine + 1; i <= endLine; i ++ {
+		for i := startLine + 1; i <= endLine; i++ {
 			originalContentTemp = append(originalContentTemp, lines[i])
 		}
 	}
 
-	settings := &Settings {
-        StartLine:       startLine,
-        EndLine:         endLine,
-        OriginalContent: originalContentTemp,
-    }
+	settings := &Settings{
+		StartLine:       startLine,
+		EndLine:         endLine,
+		OriginalContent: originalContentTemp,
+	}
 
-    gKw.Settings = settings
+	gKw.Settings = settings
 }
 
-func (gKw *GKeyWord) PopulateTestCasesOriginalContent (startLine int, endLine int, lines []string) {
+func (gKw *GKeyWord) PopulateTestCasesOriginalContent(startLine int, endLine int, lines []string) {
 	var originalContentTemp []string
 
 	if startLine != endLine {
-		for i := startLine + 1; i <= endLine; i ++ {
+		for i := startLine + 1; i <= endLine; i++ {
 			originalContentTemp = append(originalContentTemp, lines[i])
 		}
 	}
 
-	testCases := &TestCases {
-        StartLine:       startLine,
-        EndLine:         endLine,
-        OriginalContent: originalContentTemp,
-    }
+	testCases := &TestCases{
+		StartLine:       startLine,
+		EndLine:         endLine,
+		OriginalContent: originalContentTemp,
+	}
 
-    gKw.TestCases = testCases
-	
+	gKw.TestCases = testCases
+
 }
 
-func (gKw *GKeyWord) PopulateVariablesOriginalContent (startLine int, endLine int, lines []string) {
+func (gKw *GKeyWord) PopulateVariablesOriginalContent(startLine int, endLine int, lines []string) {
 	var originalContentTemp []string
 
 	if startLine != endLine {
-		for i := startLine + 1; i <= endLine; i ++ {
+		for i := startLine + 1; i <= endLine; i++ {
 			originalContentTemp = append(originalContentTemp, lines[i])
 		}
 	}
 
-	variables := &Variables {
-        StartLine:       startLine,
-        EndLine:         endLine,
-        OriginalContent: originalContentTemp,
-    }
+	variables := &Variables{
+		StartLine:       startLine,
+		EndLine:         endLine,
+		OriginalContent: originalContentTemp,
+	}
 
-    gKw.Variables = variables
-	
+	gKw.Variables = variables
+
 }
 
-func (gKw *GKeyWord) ParseSettingsOriginalContent () {
+func (gKw *GKeyWord) ParseSettingsOriginalContent() {
 	for _, line := range gKw.Settings.OriginalContent {
 		switch {
 		case strings.HasPrefix(line, "ID"):
@@ -107,7 +107,7 @@ func (gKw *GKeyWord) ParseSettingsOriginalContent () {
 	}
 }
 
-func (gKw *GKeyWord) ParseTestCasesOriginalContent () {
+func (gKw *GKeyWord) ParseTestCasesOriginalContent() {
 	var parsedTestCases []*KWTestCase
 
 	for i, line := range gKw.TestCases.OriginalContent {
@@ -118,24 +118,24 @@ func (gKw *GKeyWord) ParseTestCasesOriginalContent () {
 
 			fields := strings.Fields(str)
 			kwTcName := strings.Join(fields, "-")
-			
-			// note, here for name only, arg handle to be added later 
+
+			// note, here for name only, arg handle to be added later
 			parsedTestCase = append(parsedTestCase, kwTcName)
 
-			kwTestCase := &KWTestCase {
+			kwTestCase := &KWTestCase{
 				OriginalLine:     i + gKw.TestCases.StartLine + 1,
 				OriginalTestCase: line,
-				KWTestCaseName:	  kwTcName,
+				KWTestCaseName:   kwTcName,
 				ParsedTestCase:   parsedTestCase,
 			}
 
 			parsedTestCases = append(parsedTestCases, kwTestCase)
 		}
 	}
-	
+
 	gKw.TestCases.ParsedTestCases = parsedTestCases
 }
 
-func (gKw *GKeyWord) ParseVariablesOriginalContent () {
-	
+func (gKw *GKeyWord) ParseVariablesOriginalContent() {
+
 }

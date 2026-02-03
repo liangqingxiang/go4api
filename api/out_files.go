@@ -19,8 +19,8 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/Aysnine/go4api/lib/testcase"
-	"github.com/Aysnine/go4api/utils"
+	"github.com/liangqingxiang/go4api/lib/testcase"
+	"github.com/liangqingxiang/go4api/utils"
 
 	xlsx "github.com/tealeg/xlsx"
 	gjson "github.com/tidwall/gjson"

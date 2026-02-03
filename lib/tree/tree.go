@@ -15,7 +15,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/Aysnine/go4api/lib/testcase"
+	"github.com/liangqingxiang/go4api/lib/testcase"
 )
 
 type TcNode struct {

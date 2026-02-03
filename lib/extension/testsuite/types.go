@@ -11,7 +11,7 @@
 package testsuite
 
 import (
-	"github.com/Aysnine/go4api/lib/testcase"
+	"github.com/liangqingxiang/go4api/lib/testcase"
 )
 
 type TestSuites []*TestSuite

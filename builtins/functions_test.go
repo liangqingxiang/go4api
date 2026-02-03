@@ -11,50 +11,49 @@
 package builtins
 
 import (
-    "fmt"
-    "testing"
-    // "encoding/csv"
+	"fmt"
+	"testing"
+	// "encoding/csv"
 )
 
-func Test_CurrentTimeStampString (t *testing.T) {
-    res := CurrentTimeStampString("milli")
+func Test_CurrentTimeStampString(t *testing.T) {
+	res := CurrentTimeStampString("milli")
 
-    fmt.Println("res: ", res)
-    // if res != 4 {
-    //     t.Fatalf("getMaxLenVector test failed")
-    // } else {
-    //     t.Log("getMaxLenVector test passed")
-    // }
+	fmt.Println("res: ", res)
+	// if res != 4 {
+	//     t.Fatalf("getMaxLenVector test failed")
+	// } else {
+	//     t.Log("getMaxLenVector test passed")
+	// }
 }
 
-func Test_CurrentTimeStampUnix (t *testing.T) {
-    res := CurrentTimeStampUnix("milli")
+func Test_CurrentTimeStampUnix(t *testing.T) {
+	res := CurrentTimeStampUnix("milli")
 
-    fmt.Println("res: ", res)
-    // if res != 4 {
-    //     t.Fatalf("getMaxLenVector test failed")
-    // } else {
-    //     t.Log("getMaxLenVector test passed")
-    // }
+	fmt.Println("res: ", res)
+	// if res != 4 {
+	//     t.Fatalf("getMaxLenVector test failed")
+	// } else {
+	//     t.Log("getMaxLenVector test passed")
+	// }
 }
 
-func Test_DayStart (t *testing.T) {
-    res := DayStart(CurrentTimeStampUnix("milli"))
+func Test_DayStart(t *testing.T) {
+	res := DayStart(CurrentTimeStampUnix("milli"))
 
-    fmt.Println("res: ", res)
+	fmt.Println("res: ", res)
 }
 
-func Test_DayEnd (t *testing.T) {
-    res := DayEnd(CurrentTimeStampUnix("milli"))
+func Test_DayEnd(t *testing.T) {
+	res := DayEnd(CurrentTimeStampUnix("milli"))
 
-    fmt.Println("res: ", res)
+	fmt.Println("res: ", res)
 }
 
-func Test_TimeStampUnixOffset (t *testing.T) {
-    var oset = []interface{}{1543593599000 , "-1", "day"}
+func Test_TimeStampUnixOffset(t *testing.T) {
+	var oset = []interface{}{1543593599000, "-1", "day"}
 
-    res := TimeStampUnixOffset(oset)
+	res := TimeStampUnixOffset(oset)
 
-    fmt.Println("res: ", res)
+	fmt.Println("res: ", res)
 }
-

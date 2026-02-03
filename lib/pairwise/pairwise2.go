@@ -15,7 +15,7 @@ import (
 	"reflect"
 	"sync"
 
-	combs "github.com/Aysnine/go4api/lib/combination"
+	combs "github.com/liangqingxiang/go4api/lib/combination"
 )
 
 // -------------------------------------------------------------------------

@@ -18,10 +18,10 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
-	// "github.com/Aysnine/go4api/utils"
-	// "github.com/Aysnine/go4api/ui/js"
-	// "github.com/Aysnine/go4api/lib/testcase"
-	// "github.com/Aysnine/go4api/texttmpl"
+	// "github.com/liangqingxiang/go4api/utils"
+	// "github.com/liangqingxiang/go4api/ui/js"
+	// "github.com/liangqingxiang/go4api/lib/testcase"
+	// "github.com/liangqingxiang/go4api/texttmpl"
 )
 
 // this function is called by cmd -report, to generate report from log file

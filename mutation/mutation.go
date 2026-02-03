@@ -15,7 +15,7 @@ import (
 	// "strings"
 	"encoding/json"
 
-	"github.com/Aysnine/go4api/lib/testcase"
+	"github.com/liangqingxiang/go4api/lib/testcase"
 )
 
 // mutation is to mutate the valid data to working api, see if mutated invalid data still can be handled by the api

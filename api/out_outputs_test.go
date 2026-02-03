@@ -11,16 +11,16 @@
 package api
 
 import (
-    "fmt"
-    "testing"
-    "reflect"
-    // "encoding/csv"
+	"fmt"
+	"reflect"
+	"testing"
+	// "encoding/csv"
 )
 
 var actualBody []byte
 
 func init() {
-    actualBodyS := `
+	actualBodyS := `
         {
             "count": 20,
             "start": 0,
@@ -56,146 +56,141 @@ func init() {
             "title": "豆瓣电影Top250",
             "dummykeyfornull": null
         }`
-                    
-    actualBody = []byte(actualBodyS)
+
+	actualBody = []byte(actualBodyS)
 }
 
-
 func Test_convertSliceAsString(t *testing.T) {
-    fmt.Println("\n--> test started")
+	fmt.Println("\n--> test started")
 
-    var aa []interface{}
-    aa = append(aa, "1234")
-    aa = append(aa, `1234`)
-    aa = append(aa, `123,asdfasd"asdfasdf;4`)
+	var aa []interface{}
+	aa = append(aa, "1234")
+	aa = append(aa, `1234`)
+	aa = append(aa, `123,asdfasd"asdfasdf;4`)
 
-    str := convertSliceAsString(aa)
-    fmt.Println("==>", aa, str)
-    if str != `["1234","1234","123,asdfasd\"asdfasdf;4"]` {
-        t.Fatalf("Error, convert failed")
-    }
-    fmt.Println("\n--> test finished")
+	str := convertSliceAsString(aa)
+	fmt.Println("==>", aa, str)
+	if str != `["1234","1234","123,asdfasd\"asdfasdf;4"]` {
+		t.Fatalf("Error, convert failed")
+	}
+	fmt.Println("\n--> test finished")
 }
 
 func Test_convertSliceAsString2(t *testing.T) {
-    fmt.Println("\n--> test started")
+	fmt.Println("\n--> test started")
 
-    var aa []interface{}    
-    aa = append(aa, `{"1324": 12423, "asfdsf": "kjhgfd"}`)
+	var aa []interface{}
+	aa = append(aa, `{"1324": 12423, "asfdsf": "kjhgfd"}`)
 
-    str := convertSliceAsString(aa)
-    fmt.Println("==>", aa, str)
+	str := convertSliceAsString(aa)
+	fmt.Println("==>", aa, str)
 
-    if str != `["{\"1324\": 12423, \"asfdsf\": \"kjhgfd\"}"]` {
-        t.Fatalf("Error, convert failed")
-    }
-    fmt.Println("\n--> test finished")
+	if str != `["{\"1324\": 12423, \"asfdsf\": \"kjhgfd\"}"]` {
+		t.Fatalf("Error, convert failed")
+	}
+	fmt.Println("\n--> test finished")
 }
 
 func Test_convertSliceAsString3(t *testing.T) {
-    fmt.Println("\n--> test started")
+	fmt.Println("\n--> test started")
 
-    var aa []interface{}    
-    aa = append(aa, `["file1", "union", "file2", "join", "file3"]`)
-    aa = append(aa, `[1234,134231,1324343]`)
+	var aa []interface{}
+	aa = append(aa, `["file1", "union", "file2", "join", "file3"]`)
+	aa = append(aa, `[1234,134231,1324343]`)
 
-    str := convertSliceAsString(aa)
-    fmt.Println("==>", aa, str)
+	str := convertSliceAsString(aa)
+	fmt.Println("==>", aa, str)
 
-    if str != `["[\"file1\", \"union\", \"file2\", \"join\", \"file3\"]","[1234,134231,1324343]"]` {
-        t.Fatalf("Error, convert failed")
-    }
-    fmt.Println("\n--> test finished")
+	if str != `["[\"file1\", \"union\", \"file2\", \"join\", \"file3\"]","[1234,134231,1324343]"]` {
+		t.Fatalf("Error, convert failed")
+	}
+	fmt.Println("\n--> test finished")
 }
-
 
 func Test_GetActualValueByJsonPath(t *testing.T) {
-    fmt.Println("\n--> test started")
+	fmt.Println("\n--> test started")
 
-    key := "$.subjects.#.title"
+	key := "$.subjects.#.title"
 
-    res := GetActualValueByJsonPath(key, actualBody)
-    resSlice := reflect.ValueOf(res).Interface().([]interface{})
-    fmt.Println("==>", res, resSlice, len(resSlice))
+	res := GetActualValueByJsonPath(key, actualBody)
+	resSlice := reflect.ValueOf(res).Interface().([]interface{})
+	fmt.Println("==>", res, resSlice, len(resSlice))
 
-    if len(resSlice) != 3 {
-        t.Fatalf("Error, look up failed")
-    }
-    fmt.Println("\n--> test finished")
+	if len(resSlice) != 3 {
+		t.Fatalf("Error, look up failed")
+	}
+	fmt.Println("\n--> test finished")
 }
-
 
 func Test_GetActualValueByJsonPath2(t *testing.T) {
-    fmt.Println("\n--> test started")
+	fmt.Println("\n--> test started")
 
-    key := "$.subjects.#.titleBK"
+	key := "$.subjects.#.titleBK"
 
-    res := GetActualValueByJsonPath(key, actualBody)
-    resSlice := reflect.ValueOf(res).Interface().([]interface{})
-    fmt.Println("==>", res, resSlice, len(resSlice))
+	res := GetActualValueByJsonPath(key, actualBody)
+	resSlice := reflect.ValueOf(res).Interface().([]interface{})
+	fmt.Println("==>", res, resSlice, len(resSlice))
 
-    if len(resSlice) != 0 {
-        t.Fatalf("Error, look up failed")
-    }
-    fmt.Println("\n--> test finished")
+	if len(resSlice) != 0 {
+		t.Fatalf("Error, look up failed")
+	}
+	fmt.Println("\n--> test finished")
 }
 
-
 func Test_GetActualValueByJsonPath3(t *testing.T) {
-    fmt.Println("\n--> test started")
+	fmt.Println("\n--> test started")
 
-    key := "$.subjectsBK"
+	key := "$.subjectsBK"
 
-    res := GetActualValueByJsonPath(key, actualBody)
-    fmt.Println("==>", res)
+	res := GetActualValueByJsonPath(key, actualBody)
+	fmt.Println("==>", res)
 
-    if res != nil {
-        t.Fatalf("Error, look up failed")
-    }
-    fmt.Println("\n--> test finished")
+	if res != nil {
+		t.Fatalf("Error, look up failed")
+	}
+	fmt.Println("\n--> test finished")
 }
 
 func Test_GetActualValueByJsonPath4(t *testing.T) {
-    fmt.Println("\n--> test started")
+	fmt.Println("\n--> test started")
 
-    key := ".subjectsBK"
+	key := ".subjectsBK"
 
-    res := GetActualValueByJsonPath(key, actualBody)
-    fmt.Println("==>", "`" + fmt.Sprint(res) + "`")
+	res := GetActualValueByJsonPath(key, actualBody)
+	fmt.Println("==>", "`"+fmt.Sprint(res)+"`")
 
-    if res != key {
-        t.Fatalf("Error, look up failed")
-    }
-    fmt.Println("\n--> test finished")
+	if res != key {
+		t.Fatalf("Error, look up failed")
+	}
+	fmt.Println("\n--> test finished")
 }
 
 func Test_GetActualValueByJsonPath5(t *testing.T) {
-    fmt.Println("\n--> test started")
+	fmt.Println("\n--> test started")
 
-    key := ""
+	key := ""
 
-    res := GetActualValueByJsonPath(key, actualBody)
-    fmt.Println("==>", res)
+	res := GetActualValueByJsonPath(key, actualBody)
+	fmt.Println("==>", res)
 
-    if res != key {
-        t.Fatalf("Error, look up failed")
-    }
-    fmt.Println("\n--> test finished")
+	if res != key {
+		t.Fatalf("Error, look up failed")
+	}
+	fmt.Println("\n--> test finished")
 }
 
 func Test_GetActualValueByJsonPath6(t *testing.T) {
-    fmt.Println("\n--> test started")
+	fmt.Println("\n--> test started")
 
-    key := "$.dummykeyfornull"
+	key := "$.dummykeyfornull"
 
-    res := GetActualValueByJsonPath(key, actualBody)
-    fmt.Println("==>", res)
+	res := GetActualValueByJsonPath(key, actualBody)
+	fmt.Println("==>", res)
 
-    if res != nil {
-        t.Fatalf("Error, dummykeyfornull look up failed")
-    } else {
-        t.Log("Error, dummykeyfornull look up passed")
-    }
-    fmt.Println("\n--> test finished")
+	if res != nil {
+		t.Fatalf("Error, dummykeyfornull look up failed")
+	} else {
+		t.Log("Error, dummykeyfornull look up passed")
+	}
+	fmt.Println("\n--> test finished")
 }
-

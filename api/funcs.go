@@ -16,9 +16,9 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/Aysnine/go4api/builtins"
-	gjs "github.com/Aysnine/go4api/js"
-	"github.com/Aysnine/go4api/lib/g4json"
+	"github.com/liangqingxiang/go4api/builtins"
+	gjs "github.com/liangqingxiang/go4api/js"
+	"github.com/liangqingxiang/go4api/lib/g4json"
 
 	// gjson "github.com/tidwall/gjson"
 	sjson "github.com/tidwall/sjson"

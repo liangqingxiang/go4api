@@ -10,48 +10,44 @@
 
 package har
 
-import (
-)
+import ()
 
 // har type
 type Har map[string]HarLog
 
 type HarLog struct {
-    Version string
-    Creator map[string]string
-    Pages []map[string]interface{}
-    Entries []Entry
+	Version string
+	Creator map[string]string
+	Pages   []map[string]interface{}
+	Entries []Entry
 }
 
 type Entries []Entry
 
 type Entry struct {
-    startedDateTime string
-    time float32
-    Request Request 
-    Response Response
+	startedDateTime string
+	time            float32
+	Request         Request
+	Response        Response
 }
 
-type Request struct {  
-    Method string 
-    Url string 
-    HttpVersion string
-    Headers []map[string]interface{}
-    QueryString []map[string]interface{}
-    Cookies []map[string]interface{}
-    HeadersSize int
-    BodySize int
-    PostData map[string]interface{}
+type Request struct {
+	Method      string
+	Url         string
+	HttpVersion string
+	Headers     []map[string]interface{}
+	QueryString []map[string]interface{}
+	Cookies     []map[string]interface{}
+	HeadersSize int
+	BodySize    int
+	PostData    map[string]interface{}
 }
 
-
-type Response struct {  
-    Status int
-    StatusText string
-    HttpVersion string
-    Headers map[string]interface{}
-    Cookies []map[string]interface{}
-    content map[string]interface{}
+type Response struct {
+	Status      int
+	StatusText  string
+	HttpVersion string
+	Headers     map[string]interface{}
+	Cookies     []map[string]interface{}
+	content     map[string]interface{}
 }
-
-

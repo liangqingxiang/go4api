@@ -11,15 +11,15 @@
 package texttmpl
 
 import (
-    "fmt"
-    "testing"
-    // "encoding/csv"
+	"fmt"
+	"testing"
+	// "encoding/csv"
 )
 
 func Test_GetTcJson(t *testing.T) {
-    fmt.Println("\n--> test started")
+	fmt.Println("\n--> test started")
 
-    jsonTemplate := `[
+	jsonTemplate := `[
                       {
                         "FirstTestCase-001": {
                           "priority": "9",
@@ -58,16 +58,12 @@ func Test_GetTcJson(t *testing.T) {
                       }
                     ]`
 
-    csvHeader := []string{"h1", "h2", "h3"}
-    csvRow := []string{"d1", "d2", `["file1", "union", "file2", "join", "file3"]`}
+	csvHeader := []string{"h1", "h2", "h3"}
+	csvRow := []string{"d1", "d2", `["file1", "union", "file2", "join", "file3"]`}
 
-    tcJson := GetTcJson(jsonTemplate, csvHeader, csvRow)
+	tcJson := GetTcJson(jsonTemplate, csvHeader, csvRow)
 
-    fmt.Println("tcJson: ", tcJson)
+	fmt.Println("tcJson: ", tcJson)
 
-    fmt.Println("\n--> test finished")
+	fmt.Println("\n--> test finished")
 }
-
-
-
-

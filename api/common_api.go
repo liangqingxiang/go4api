@@ -18,9 +18,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/Aysnine/go4api/cmd"
-	"github.com/Aysnine/go4api/lib/testcase"
-	"github.com/Aysnine/go4api/utils"
+	"github.com/liangqingxiang/go4api/cmd"
+	"github.com/liangqingxiang/go4api/lib/testcase"
+	"github.com/liangqingxiang/go4api/utils"
 
 	gjson "github.com/tidwall/gjson"
 )

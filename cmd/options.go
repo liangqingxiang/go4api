@@ -19,7 +19,7 @@ import (
 	"flag"
 	"os"
 
-	"github.com/Aysnine/go4api/utils"
+	"github.com/liangqingxiang/go4api/utils"
 )
 
 var (
@@ -168,7 +168,7 @@ func usage() {
 -----
 go4api version: 0.72.1
 
-forked: github.com/Aysnine/go4api
+forked: github.com/liangqingxiang/go4api
 
 -----
 Usage:

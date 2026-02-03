@@ -14,7 +14,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/Aysnine/go4api/utils"
+	"github.com/liangqingxiang/go4api/utils"
 )
 
 var config Config

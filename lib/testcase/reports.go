@@ -14,8 +14,8 @@ import (
 	// "fmt"
 	"path/filepath"
 
-	"github.com/Aysnine/go4api/cmd"
-	gsession "github.com/Aysnine/go4api/lib/session"
+	"github.com/liangqingxiang/go4api/cmd"
+	gsession "github.com/liangqingxiang/go4api/lib/session"
 )
 
 // for report

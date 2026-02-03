@@ -11,24 +11,21 @@
 package api
 
 import (
-    // "os"
-    "io/ioutil"
-    "net/http"
-    "fmt"
+	// "os"
+	"fmt"
+	"io/ioutil"
+	"net/http"
 )
 
+func SaveHttpRespFile(actualBody []byte, outputsFile string) {
+	// filePath := cmd.Opt.Testresource
 
-func SaveHttpRespFile (actualBody []byte, outputsFile string) {
-    // filePath := cmd.Opt.Testresource
+	ioutil.WriteFile(outputsFile, actualBody, 0644)
 
-    ioutil.WriteFile(outputsFile, actualBody, 0644)
+	// use the first 512 bytes for type
+	buffer := make([]byte, 512)
+	buffer = actualBody[0:512]
 
-    // use the first 512 bytes for type
-    buffer := make([]byte, 512)
-    buffer = actualBody[0:512]
-
-    contentType := http.DetectContentType(buffer)
-    fmt.Println("contentType: ", contentType)
+	contentType := http.DetectContentType(buffer)
+	fmt.Println("contentType: ", contentType)
 }
-
-

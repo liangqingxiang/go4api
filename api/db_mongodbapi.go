@@ -13,7 +13,7 @@ package api
 import (
 	// "fmt"
 
-	gmongodb "github.com/Aysnine/go4api/db/mongodb"
+	gmongodb "github.com/liangqingxiang/go4api/db/mongodb"
 )
 
 func RunMongoDB(cmdStr string) (int, interface{}, string) {

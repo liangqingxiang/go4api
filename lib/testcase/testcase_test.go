@@ -11,10 +11,10 @@
 package testcase
 
 import (
-    "fmt"
-    "testing"
-    // "encoding/csv"
-    "encoding/json"
+	"fmt"
+	"testing"
+	// "encoding/csv"
+	"encoding/json"
 )
 
 var tcSampleStr string
@@ -22,7 +22,7 @@ var tcases TestCases
 var tcSample TestCase
 
 func init() {
-    tcSampleStr := `
+	tcSampleStr := `
         [
           {
             "s2ChildTestCase-001": {
@@ -58,33 +58,30 @@ func init() {
             }
           }
         ]`
-    
-    json.Unmarshal([]byte(tcSampleStr), &tcases)
-    tcSample = tcases[0]
-    
+
+	json.Unmarshal([]byte(tcSampleStr), &tcases)
+	tcSample = tcases[0]
+
 }
 
 func Test_TcName(t *testing.T) {
-    res := tcSample.TcName()
+	res := tcSample.TcName()
 
-    fmt.Println(res)
-    if res != `s2ChildTestCase-001` {
-        t.Fatalf("TcName() test failed")
-    } else {
-        t.Log("TcName() test passed")
-    }
+	fmt.Println(res)
+	if res != `s2ChildTestCase-001` {
+		t.Fatalf("TcName() test failed")
+	} else {
+		t.Log("TcName() test passed")
+	}
 }
 
 func Test_Priority(t *testing.T) {
-    res := tcSample.Priority()
+	res := tcSample.Priority()
 
-    fmt.Println(res)
-    if res != `1` {
-        t.Fatalf("Priority() test failed")
-    } else {
-        t.Log("Priority() test passed")
-    }
+	fmt.Println(res)
+	if res != `1` {
+		t.Fatalf("Priority() test failed")
+	} else {
+		t.Log("Priority() test passed")
+	}
 }
-
-
-

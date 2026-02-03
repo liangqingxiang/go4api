@@ -13,7 +13,7 @@ package testsuite
 import (
 	// "fmt"
 
-	gsession "github.com/Aysnine/go4api/lib/session"
+	gsession "github.com/liangqingxiang/go4api/lib/session"
 )
 
 // set the session info for test suite

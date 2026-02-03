@@ -11,7 +11,7 @@
 package api
 
 import (
-	"github.com/Aysnine/go4api/lib/testcase"
+	"github.com/liangqingxiang/go4api/lib/testcase"
 )
 
 type TcDataStore struct {

@@ -18,12 +18,12 @@ import (
 
 	// "encoding/json"
 
-	"github.com/Aysnine/go4api/cmd"
-	// "github.com/Aysnine/go4api/fuzz"
-	gmongodb "github.com/Aysnine/go4api/db/mongodb"
-	gredis "github.com/Aysnine/go4api/db/redis"
-	gsql "github.com/Aysnine/go4api/db/sqldb"
-	"github.com/Aysnine/go4api/mutation"
+	"github.com/liangqingxiang/go4api/cmd"
+	// "github.com/liangqingxiang/go4api/fuzz"
+	gmongodb "github.com/liangqingxiang/go4api/db/mongodb"
+	gredis "github.com/liangqingxiang/go4api/db/redis"
+	gsql "github.com/liangqingxiang/go4api/db/sqldb"
+	"github.com/liangqingxiang/go4api/mutation"
 )
 
 func Dispatch(ch chan int, gStart_time time.Time, gStart_str string) {

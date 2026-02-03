@@ -17,12 +17,12 @@ import (
 	"sync"
 	"time"
 
-	"github.com/Aysnine/go4api/cmd"
-	"github.com/Aysnine/go4api/lib/testcase"
-	"github.com/Aysnine/go4api/lib/tree"
-	"github.com/Aysnine/go4api/reports"
+	"github.com/liangqingxiang/go4api/cmd"
+	"github.com/liangqingxiang/go4api/lib/testcase"
+	"github.com/liangqingxiang/go4api/lib/tree"
+	"github.com/liangqingxiang/go4api/reports"
 
-	"github.com/Aysnine/go4api/api"
+	"github.com/liangqingxiang/go4api/api"
 )
 
 func (tcsRunStore *TcsRunStore) InitRun() {

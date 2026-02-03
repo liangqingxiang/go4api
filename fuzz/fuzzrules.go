@@ -19,9 +19,9 @@ import (
 	// "path/filepath"
 	"strings"
 	// "strconv"
-	// "github.com/Aysnine/go4api/utils"
+	// "github.com/liangqingxiang/go4api/utils"
 
-	"github.com/Aysnine/go4api/lib/rands"
+	"github.com/liangqingxiang/go4api/lib/rands"
 )
 
 // fuzz - random - valid

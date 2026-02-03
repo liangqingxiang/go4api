@@ -11,19 +11,19 @@
 package assertion
 
 import (
-    "fmt"
-    "testing"
-    // "encoding/csv"
+	"fmt"
+	"testing"
+	// "encoding/csv"
 )
 
 func Test_init(t *testing.T) {
-    for _, value := range assertionMapping {
-        fmt.Println("AssertionMapping: ", value)
-    }
-    
-    if len(assertionMapping) != 14 {
-        t.Fatalf("init failed")
-    } else {
-        t.Log("init test passed")
-    }
+	for _, value := range assertionMapping {
+		fmt.Println("AssertionMapping: ", value)
+	}
+
+	if len(assertionMapping) != 14 {
+		t.Fatalf("init failed")
+	} else {
+		t.Log("init test passed")
+	}
 }

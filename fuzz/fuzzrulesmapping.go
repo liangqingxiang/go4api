@@ -10,36 +10,32 @@
 
 package fuzz
 
-import (
-
-)
-
+import ()
 
 func FuzzRulesMapping(key string) []interface{} {
-    //
-    RulesMapping := map[string][]interface{} {
-        "FCharValid": []interface{} {
-            FCharValidR1, 
-            FCharValidR2, 
-            FCharValidR3,
-        },
-        "FCharInvalid": []interface{} {
-            FCharValidR1, 
-            FCharValidR2, 
-            FCharValidR3,
-        },
-        "FCharNumericValid": []interface{} {
-            FCharValidR1, 
-            FCharValidR2, 
-            FCharValidR3,
-        },
-        "FCharAlphaValid": []interface{} {
-            FCharValidR1, 
-            FCharValidR2, 
-            FCharValidR3,
-        },
-        
-    }
+	//
+	RulesMapping := map[string][]interface{}{
+		"FCharValid": []interface{}{
+			FCharValidR1,
+			FCharValidR2,
+			FCharValidR3,
+		},
+		"FCharInvalid": []interface{}{
+			FCharValidR1,
+			FCharValidR2,
+			FCharValidR3,
+		},
+		"FCharNumericValid": []interface{}{
+			FCharValidR1,
+			FCharValidR2,
+			FCharValidR3,
+		},
+		"FCharAlphaValid": []interface{}{
+			FCharValidR1,
+			FCharValidR2,
+			FCharValidR3,
+		},
+	}
 
-    return RulesMapping[key]
+	return RulesMapping[key]
 }

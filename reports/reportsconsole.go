@@ -15,8 +15,8 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/Aysnine/go4api/cmd"
-	"github.com/Aysnine/go4api/lib/testcase"
+	"github.com/liangqingxiang/go4api/cmd"
+	"github.com/liangqingxiang/go4api/lib/testcase"
 )
 
 const CLR_0 = "\x1b[30;1m"

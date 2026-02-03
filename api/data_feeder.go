@@ -16,9 +16,9 @@ import (
 	// "strings"
 	// "encoding/json"
 
-	"github.com/Aysnine/go4api/cmd"
-	gsession "github.com/Aysnine/go4api/lib/session"
-	"github.com/Aysnine/go4api/utils"
+	"github.com/liangqingxiang/go4api/cmd"
+	gsession "github.com/liangqingxiang/go4api/lib/session"
+	"github.com/liangqingxiang/go4api/utils"
 )
 
 // data lookup sequence, latter override former one(s)

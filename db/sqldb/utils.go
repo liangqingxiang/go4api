@@ -11,21 +11,18 @@
 package gsql
 
 import (
-    "strings"
+	"strings"
 )
 
+func renderValue(jsonStr string, feeder map[string]string) string {
+	s := jsonStr
 
-//
-func renderValue (jsonStr string, feeder map[string]string) string {
-    s := jsonStr
-    
-    for key, value := range feeder {
-        k := "${" + key + "}"
-        if k == s {
-            s = strings.Replace(s, k, value, -1)
-        }
-    }
+	for key, value := range feeder {
+		k := "${" + key + "}"
+		if k == s {
+			s = strings.Replace(s, k, value, -1)
+		}
+	}
 
-    return s
+	return s
 }
-

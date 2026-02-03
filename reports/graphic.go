@@ -15,8 +15,8 @@ import (
 	// "strconv"
 	"encoding/json"
 
-	"github.com/Aysnine/go4api/texttmpl"
-	"github.com/Aysnine/go4api/ui/js"
+	"github.com/liangqingxiang/go4api/texttmpl"
+	"github.com/liangqingxiang/go4api/ui/js"
 )
 
 func (tcReportSlice TcReportSlice) GenerateGraphicJs(resultsDir string) {
